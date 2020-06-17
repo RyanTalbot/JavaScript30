@@ -3,10 +3,13 @@ const minsHand = document.querySelector(".min-hand");
 const hourHand = document.querySelector(".hour-hand");
 
 function setDate() {
+  // Grabbing current date
   const now = new Date();
-
+  // Grabbing seconds from date variable
   const seconds = now.getSeconds();
+  // 360 degree orientation + 90 to align
   const secondsDegrees = (seconds / 60) * 360 + 90;
+  // Rotates the arm
   secondHand.style.transform = `rotate(${secondsDegrees}deg)`;
 
   const mins = now.getMinutes();
