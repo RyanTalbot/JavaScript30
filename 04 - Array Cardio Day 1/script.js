@@ -65,6 +65,20 @@ const people = [
 // Array.prototype.filter()
 // 1. Filter the list of inventors for those who were born in the 1500's
 
+// Full way for clarity below
+const fifteenHun = inventors.filter(function (inventor) {
+  if (inventor.year >= 1500 && inventor.year < 1600) {
+    return true; // Keep it!
+  }
+});
+console.table(fifteenHun);
+// Arrow function for simplicity
+// We give it inventor and if both statements are true it'll return the inventor
+const fifteenHunArrow = inventors.filter(
+  (inventor) => inventor.year >= 1500 && inventor.year < 1600
+);
+console.table(fifteenHunArrow);
+
 // Array.prototype.map()
 // 2. Give us an array of the inventor first and last names
 
