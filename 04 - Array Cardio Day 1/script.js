@@ -105,6 +105,12 @@ console.table(oldestSort);
 
 // Array.prototype.reduce()
 // 4. How many years did all the inventors live?
+// Like a loop, it'll keep track of the last total(0) and
+// add the years of the next inventor and accumulate
+const totalYears = inventors.reduce((total, inventor) => {
+  return total + (inventor.passed - inventor.year);
+}, 0);
+console.log(totalYears);
 
 // 5. Sort the inventors by years lived
 
