@@ -122,14 +122,14 @@ console.table(oldest);
 
 // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
 // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
-const category = document.querySelector(".mw-category");
-// Array.from for readability
-const links = Array.from(category.querySelectorAll("a"));
-// ES6 Spread, does the same thing
-//const links = [...category.querySelectorAll("a")];
-const de = links
-  .map((link) => link.textContent)
-  .filter((streetName) => streetName.includes("de"));
+// const category = document.querySelector(".mw-category");
+// // Array.from for readability
+// const links = Array.from(category.querySelectorAll("a"));
+// // ES6 Spread, does the same thing
+// //const links = [...category.querySelectorAll("a")];
+// const de = links
+//   .map((link) => link.textContent)
+//   .filter((streetName) => streetName.includes("de"));
 
 // 7. sort Exercise
 // Sort the people alphabetically by last name
@@ -142,3 +142,28 @@ console.log(alpha);
 
 // 8. Reduce Exercise
 // Sum up the instances of each of these
+const data = [
+  "car",
+  "car",
+  "truck",
+  "truck",
+  "bike",
+  "walk",
+  "walk",
+  "van",
+  "bus",
+  "car",
+  "bus",
+];
+
+const transportation = data.reduce(function (obj, item) {
+  // Start with blank object and loop over and see if there's a zero there to work with
+  if (!obj[item]) {
+    // If there isn't, we create an entry for that
+    obj[item] = 0;
+  }
+  // Then increment
+  obj[item]++;
+  return obj;
+}, {});
+console.log(transportation);
