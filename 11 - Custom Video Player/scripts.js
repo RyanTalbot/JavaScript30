@@ -17,5 +17,15 @@ function togglePlay(){
     }
 }
 
+function updateButton(){
+    // "this." is bound to video
+    const icon = this.paused ? "►" : "❚ ❚";
+    toggle.textContent = icon;
+}
+
 /* Event Listeners */
 video.addEventListener("click", togglePlay());
+video.addEventListener("play", updateButton());
+video.addEventListener("pause", updateButton());
+
+toggle.addEventListener("click", togglePlay());
