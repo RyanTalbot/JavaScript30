@@ -17,3 +17,5 @@ function highlightLink() {
   highlight.style.height = `${coords.height}px`;
   highlight.style.transform = `translate(${coords.left}px, ${coords.top}px)`;
 }
+
+triggers.forEach((a) => a.addEventListener('mouseenter', highlightLink));
